@@ -28,4 +28,26 @@ public class ArrayTests {
     int[] input1 = {1, 2, 3, 4, 5 };
     assertArrayEquals(new int[]{5, 4, 3, 2, 1 }, ArrayExamples.reversed(input1));
   }
+
+  @Test
+  public void testAverageWithoutLowestNoElements(){
+    double [] input1 = {};
+    // Deprecated. Use assertEquals(double expected, double actual, double epsilon) instead
+    assertEquals(0.0, ArrayExamples.averageWithoutLowest(input1), 0.000001);
+  }
+
+  @Test
+  public void testAverageWithoutLowestOneElement(){
+    double [] input1 = {2};
+    // Deprecated. Use assertEquals(double expected, double actual, double epsilon) instead
+    assertEquals(0.0, ArrayExamples.averageWithoutLowest(input1), 0.000001);
+  }
+
+  @Test
+  public void testAverageWithoutLowestMultipleElement(){
+    double [] input1 = {1,2,3,4,5};
+    double expectedValue = (5+4+3+2)/4.0;
+    // Deprecated. Use assertEquals(double expected, double actual, double epsilon) instead
+    assertEquals(expectedValue, ArrayExamples.averageWithoutLowest(input1), 0.000001);
+  }
 }
